@@ -300,4 +300,29 @@ textLayer {
   white-space: pre;
   cursor: text;
   transform-origin: 0% 0%;
+
+
+
+
+
+    
+}
+
+
+
+
+
+
+
+.pdfPresentationMode .pdfViewer {
+  padding-bottom: 0;
+}
+
+.pdfPresentationMode .spread {
+  margin: 0;
+}
+
+.pdfPresentationMode .pdfViewer .page {
+  margin: 0 auto;
+  border: 2px solid transparent;
 }
