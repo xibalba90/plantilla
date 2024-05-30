@@ -282,7 +282,7 @@ tr:hover .cut {
   position: fixed;
   align-items: center;
   justify-content: center;
-/*	top: 60%; */
+*	top: 60%; *
 *	left: 30%; */
   margin: 0 auto;
   height: 100vh;
