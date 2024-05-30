@@ -277,58 +277,15 @@ tr:hover .cut {
 
 
 
-
-
-textLayer {
-  position: absolute;
-  text-align: initial;
-  inset: 0;
-  overflow: hidden;
+.watermark {
   opacity: 0.25;
-  line-height: 1;
-  -webkit-text-size-adjust: none;
-     -moz-text-size-adjust: none;
-          text-size-adjust: none;
-  forced-color-adjust: none;
-  transform-origin: 0 0;
-  z-index: 2;
-}
-
-.textLayer :is(span, br) {
-  color: transparent;
-  position: absolute;
-  white-space: pre;
-  cursor: text;
-  transform-origin: 0% 0%;
-
-
-
-
-
-    
-}
-
-element.style {
-    left: 5.55%;
-    top: 94.21%;
-    font-size: calc(var(--scale-factor)*100.00px);
-    font-family: sans-serif;
-    transform: rotate(-90deg) scaleX(0.999998);
-}
-
-
-
-
-
-.pdfPresentationMode .pdfViewer {
-  padding-bottom: 0;
-}
-
-.pdfPresentationMode .spread {
-  margin: 0;
-}
-
-.pdfPresentationMode .pdfViewer .page {
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+/*	top: 60%; */
+*	left: 30%; */
   margin: 0 auto;
-  border: 2px solid transparent;
+  height: 100vh;
+  font-size: 500%;
+  color: #00407d;
 }
