@@ -272,3 +272,21 @@ tr:hover .cut {
 .small-text {
     font-size: 60%;
 }
+
+
+
+
+
+
+.watermark {
+  opacity: 0.25;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+*	top: 60%; *
+*	left: 30%; *
+  margin: 0 auto;
+  height: 100vh;
+  font-size: 500%;
+  color: #00407d;
+
