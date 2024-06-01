@@ -38,7 +38,7 @@ h1 {
     letter-spacing: 0.5em;
     text-align: center;
     text-transform: uppercase;
-    margin-bottom: 5em; /* Añadido para espacio después del título */
+    margin-bottom: 20em; /* Añadido para espacio después del título */
 }
 
 /* table */
