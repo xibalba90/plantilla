@@ -2,22 +2,46 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            margin: 20px;
-            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
         }
         .alerta-amber {
             border: 2px solid #f00;
             padding: 20px;
             max-width: 600px;
-            margin: 0 auto;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .alerta-amber header {
             text-align: center;
             margin-bottom: 20px;
+            position: relative;
         }
-        .alerta-amber img {
+        .alerta-amber header img {
+            position: absolute;
+            top: 0;
+        }
+        .alerta-amber header img#logo-left {
+            left: 0;
+        }
+        .alerta-amber header img#logo-right {
+            right: 0;
+        }
+        .alerta-amber header h1,
+        .alerta-amber header h2 {
+            margin: 0;
+        }
+        .alerta-amber img.profile {
             display: block;
-            margin: 0 auto 20px;
+            margin: 20px auto;
+            width: 150px;
+            height: auto;
         }
         .alerta-amber .info {
             display: flex;
