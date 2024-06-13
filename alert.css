@@ -1,69 +1,108 @@
 <style>
+        @page {
+            size: letter;
+            margin: 20mm;
+        }
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.4;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             background-color: #f8f8f8;
+            height: 100vh;
+            box-sizing: border-box;
         }
         .alerta-amber {
             border: 2px solid #f00;
             padding: 20px;
-            max-width: 600px;
             width: 100%;
+            max-width: 800px;
             background: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
         }
         .alerta-amber header {
-            text-align: center;
-            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
             position: relative;
         }
         .alerta-amber header img {
-            position: absolute;
-            top: 0;
+            width: 50px;
+            height: auto;
         }
-        .alerta-amber header img#logo-left {
-            left: 0;
+        .alerta-amber header .center-logo {
+            text-align: center;
+            flex-grow: 1;
         }
-        .alerta-amber header img#logo-right {
-            right: 0;
+        .alerta-amber header .center-logo img {
+            width: 80px;
+            height: auto;
         }
-        .alerta-amber header h1,
         .alerta-amber header h2 {
+            position: absolute;
+            bottom: -20px;
+            width: 100%;
+            text-align: center;
             margin: 0;
+            font-size: 1.2em;
         }
         .alerta-amber img.profile {
             display: block;
-            margin: 20px auto;
-            width: 150px;
+            margin: 10px auto;
+            width: 120px;
             height: auto;
         }
         .alerta-amber .info {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            margin-top: 10px;
         }
         .alerta-amber .info div {
             flex: 1;
-            margin: 10px;
+            margin: 5px;
         }
         .alerta-amber .info div:nth-child(2) {
             text-align: right;
         }
         .alerta-amber .info div p {
-            margin: 5px 0;
+            margin: 3px 0;
+            font-size: 0.9em;
         }
         .alerta-amber .description {
-            margin-top: 20px;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        .alerta-amber .description p {
+            margin: 5px 0;
+        }
+        .alerta-amber .informant {
+            margin-top: 10px;
+        }
+        .alerta-amber .informant h3 {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        .alerta-amber .informant p {
+            margin: 3px 0;
+            font-size: 0.9em;
+        }
+        .alerta-amber .informant p strong {
+            display: inline-block;
+            width: 150px;
         }
         .alerta-amber .contact {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 10px;
             font-weight: bold;
+            font-size: 1em;
+        }
+        .alerta-amber .contact p {
+            margin: 5px 0;
         }
     </style>
