@@ -32,7 +32,7 @@
             position: relative;
         }
         .alerta-amber header img {
-            width: 50px;
+            width: 70px;
             height: auto;
         }
         .alerta-amber header .center-logo {
@@ -54,7 +54,7 @@
         .alerta-amber img.profile {
             display: block;
             margin: 10px auto;
-            width: 80px;
+            width: 100px;
             height: auto;
            align: center;
         }
