@@ -1,70 +1,62 @@
- <style>
+<style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
+        .alerta-amber {
+            border: 2px solid #f00;
             padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border: 2px solid #000;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .header img {
-            height: 70px;
-        }
-        .title {
+        .alerta-amber header {
             text-align: center;
-            color: #d9534f;
-            font-size: 24px;
-            margin: 10px 0;
-            font-weight: bold;
-        }
-        .report-number {
-            text-align: center;
-            color: #000;
             margin-bottom: 20px;
-            font-weight: bold;
+            position: relative;
         }
-        .details {
-            display: flex;
+        .alerta-amber header img {
+            position: absolute;
+            top: 0;
         }
-        .details img {
+        .alerta-amber header img#logo-left {
+            left: 0;
+        }
+        .alerta-amber header img#logo-right {
+            right: 0;
+        }
+        .alerta-amber header h1,
+        .alerta-amber header h2 {
+            margin: 0;
+        }
+        .alerta-amber img.profile {
+            display: block;
+            margin: 20px auto;
             width: 150px;
             height: auto;
-            margin-right: 20px;
-            border-radius: 5px;
         }
-        .info {
+        .alerta-amber .info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .alerta-amber .info div {
             flex: 1;
+            margin: 10px;
         }
-        .info p {
+        .alerta-amber .info div:nth-child(2) {
+            text-align: right;
+        }
+        .alerta-amber .info div p {
             margin: 5px 0;
         }
-        .info .label {
-            font-weight: bold;
-        }
-        .summary {
+        .alerta-amber .description {
             margin-top: 20px;
         }
-        .contact {
-            margin-top: 20px;
+        .alerta-amber .contact {
             text-align: center;
-        }
-        .contact p {
-            margin: 5px 0;
+            margin-top: 20px;
             font-weight: bold;
-        }
-        .summary p, .contact p {
-            font-size: 14px;
         }
     </style>
