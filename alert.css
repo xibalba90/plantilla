@@ -109,4 +109,20 @@
         .alerta-amber .contact p {
             margin: 5px 0;
         }
+
+.alerta-amber header h1 {
+            margin: 5px 0;
+            font-size: 1.1em;
+            color: #000;
+        }
+        .alerta-amber header h2 {
+            margin: 5px 0;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .alerta-amber header h3 {
+            margin: 5px 0;
+            font-size: 1em;
+            color: #777;
+        }
     </style>
