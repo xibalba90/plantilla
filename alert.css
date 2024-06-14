@@ -86,8 +86,14 @@
             margin-top: 10px;
         }
         .alerta-amber .informant h3 {
-            margin: 10px 0;
-            font-size: 1em;
+           margin: px 0;
+    font-size: 1em;
+    /* position: absolute; */
+    /* bottom: -20px; */
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-size: 1.2em;
         }
         .alerta-amber .informant p {
             margin: 3px 0;
