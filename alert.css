@@ -43,22 +43,39 @@
             width: 80px;
             height: auto;
         }
-
-.alerta-amber header h2 {
+        .alerta-amber header h1,
+        .alerta-amber header h2,
+        .alerta-amber header h3 {
             position: absolute;
-            bottom: -20px;
             width: 100%;
             text-align: center;
             margin: 0;
+            padding: 0;
+        }
+        .alerta-amber header h1 {
+            top:90px;
             font-size: 1.1em;
-        
+            color: #000;
+        }
+        .alerta-amber header h2 {
+            top: 110px;
+            font-size: 1em;
+            color: #555;
+        }
+        .alerta-amber header h3 {
+            top: 152px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .alerta-amber .center-logo {
+            margin-top: 90px;
         }
         .alerta-amber img.profile {
             display: block;
             margin: 10px auto;
             width: 100px;
             height: auto;
-           align: center;
+            align: center;
         }
         .alerta-amber .info {
             display: flex;
@@ -88,11 +105,10 @@
             margin-top: 10px;
         }
         .alerta-amber .informant h3 {
-        
-    width: 100%;
-    text-align: center;
-    margin: 0;
-    font-size: 1.1em;
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            font-size: 1.1em;
         }
         .alerta-amber .informant p {
             margin: 3px 0;
@@ -111,48 +127,4 @@
         .alerta-amber .contact p {
             margin: 5px 0;
         }
-
-.alerta-amber header h1 {
-            margin: 5px 0;
-            font-size: 1.1em;
-            color: #000;
-        }
-        .alerta-amber header h2 {
-            margin: 5px 0;
-            font-size: 1.1em;
-            color: #555;
-        }
-        .alerta-amber header h3 {
-            margin: 5px 0;
-            font-size: 1em;
-            color: #777;
-        }
-.alerta-amber header h1 {
-            margin: 5px 0;
-            font-size: 1.1em;
-            color: #000;
-
-
-
-
-
-
-
-alerta-amber header h1 {
-            margin: 5px 0;
-            font-size: 0.8em;
-            color: #000;
-        }
-        .alerta-amber header h2 {
-            margin: 5px 0;
-            font-size: 0.9em;
-            color: #555;
-        }
-        .alerta-amber header h3 {
-            margin: 5px 0;
-            font-size: 0.7em;
-            color: #777;
-        }
-
-        
     </style>
