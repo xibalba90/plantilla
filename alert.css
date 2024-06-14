@@ -53,17 +53,17 @@
             padding: 0;
         }
         .alerta-amber header h1 {
-            top:90px;
+            top:110px;
             font-size: 1.1em;
             color: #000;
         }
         .alerta-amber header h2 {
-            top: 110px;
+            top: 140px;
             font-size: 1em;
             color: #555;
         }
         .alerta-amber header h3 {
-            top: 152px;
+            top: 190px;
             font-size: 0.9em;
             color: #777;
         }
