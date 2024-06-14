@@ -67,11 +67,7 @@
             font-size: 0.9em;
             color: #777;
         }
-.alerta-amber .content-center {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 90px;}
+
         .alerta-amber .center-logo {
             margin-top: 90px;
         }
