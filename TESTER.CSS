@@ -1,0 +1,121 @@
+<style>
+        @page {
+            size: letter;
+            margin: 20mm;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f8f8;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .alerta-amber {
+            border: 2px solid #f00;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+        .alerta-amber header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .alerta-amber header .logos {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+        .alerta-amber header .logos img {
+            width: 50px;
+            height: auto;
+        }
+        .alerta-amber header .center-logo img {
+            width: 80px;
+            height: auto;
+        }
+        .alerta-amber header h1 {
+            margin: 5px 0;
+            font-size: 1.5em;
+            color: #000;
+        }
+        .alerta-amber header h2 {
+            margin: 5px 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+        .alerta-amber header h3 {
+            margin: 5px 0;
+            font-size: 1em;
+            color: #777;
+        }
+        .profile-container {
+            text-align: center;
+            margin: 10px auto;
+        }
+        .profile-container img {
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+        }
+        .alerta-amber .info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .alerta-amber .info div {
+            flex: 1;
+            margin: 5px;
+        }
+        .alerta-amber .info div:nth-child(2) {
+            text-align: right;
+        }
+        .alerta-amber .info div p {
+            margin: 3px 0;
+            font-size: 0.9em;
+        }
+        .alerta-amber .description {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        .alerta-amber .description p {
+            margin: 5px 0;
+        }
+        .alerta-amber .informant {
+            margin-top: 10px;
+        }
+        .alerta-amber .informant h3 {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        .alerta-amber .informant p {
+            margin: 3px 0;
+            font-size: 0.9em;
+        }
+        .alerta-amber .informant p strong {
+            display: inline-block;
+            width: 150px;
+        }
+        .alerta-amber .contact {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 1em;
+        }
+        .alerta-amber .contact p {
+            margin: 5px 0;
+        }
+    </style>
