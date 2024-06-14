@@ -127,4 +127,8 @@
             font-size: 1em;
             color: #777;
         }
+.alerta-amber header h1 {
+            margin: 5px 0;
+            font-size: 1.1em;
+            color: #000;
     </style>
