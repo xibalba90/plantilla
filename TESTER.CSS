@@ -1,4 +1,4 @@
-<style>
+ <style>
         @page {
             size: letter;
             margin: 20mm;
@@ -23,6 +23,7 @@
             background: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             box-sizing: border-box;
+            margin: 20px; /* Ajuste de margen para evitar que se salga */
         }
         .alerta-amber header {
             display: flex;
@@ -34,12 +35,20 @@
         .alerta-amber header .logos {
             display: flex;
             justify-content: space-between;
-            width: 40%;
+            width: 100%;
             align-items: center;
+            margin-bottom: 20px; /* Espacio entre logos y encabezados */
+            padding: 0 20px; /* Aumenta el padding para separar más los logos */
         }
         .alerta-amber header .logos img {
             width: 50px;
             height: auto;
+        }
+        .alerta-amber header .left-logo {
+            margin-right: auto; /* Empuja el logo izquierdo hacia la izquierda */
+        }
+        .alerta-amber header .right-logo {
+            margin-left: auto; /* Empuja el logo derecho hacia la derecha */
         }
         .alerta-amber header .center-logo img {
             width: 80px;
@@ -47,17 +56,17 @@
         }
         .alerta-amber header h1 {
             margin: 5px 0;
-            font-size: 1.5em;
+            font-size: 1.2em;
             color: #000;
         }
         .alerta-amber header h2 {
             margin: 5px 0;
-            font-size: 1.2em;
+            font-size: 0.9em;
             color: #555;
         }
         .alerta-amber header h3 {
             margin: 5px 0;
-            font-size: 1em;
+            font-size: 0.8em;
             color: #777;
         }
         .profile-container {
