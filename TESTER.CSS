@@ -34,7 +34,7 @@
         .alerta-amber header .logos {
             display: flex;
             justify-content: space-between;
-            width: 100%;
+            width: 40%;
             align-items: center;
         }
         .alerta-amber header .logos img {
