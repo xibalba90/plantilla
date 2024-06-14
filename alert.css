@@ -94,7 +94,7 @@
         }
         .alerta-amber .informant p {
             margin: 3px 0;
-            font-size: 0.9em;
+            font-size: 0.8em;
         }
         .alerta-amber .informant p strong {
             display: inline-block;
@@ -102,7 +102,7 @@
         }
         .alerta-amber .contact {
             text-align: center;
-            margin-top: 10px;
+            margin-top: 8px;
             font-weight: bold;
             font-size: 1em;
         }
