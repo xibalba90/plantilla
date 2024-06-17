@@ -140,6 +140,17 @@
         text-align: center;
 
 }
+ .container{
 
+display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Para centrar verticalmente en toda la altura de la ventana */
+        }
+        .image {
+            margin: 0 10px; /* Espacio entre las imágenes */
+
+        
+}
 
     </style>
