@@ -82,7 +82,7 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            margin-top: 10px;
+            margin-top: 0px;
         }
         .alerta-amber .info div {
             flex: 1;
@@ -109,7 +109,7 @@
             width: 100%;
             text-align: center;
             margin: 0;
-            font-size: 1.1em;
+            font-size: 1em;
         }
         .alerta-amber .informant p {
             margin: 3px 0;
