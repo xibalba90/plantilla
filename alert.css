@@ -134,5 +134,12 @@
 .alerta-amber .test {
             text-align: right;
            margin-top: 90px;
+
+.alerta-amber .ctest {
+    margin-top: 90px;
 }
+
+}
+
+
     </style>
