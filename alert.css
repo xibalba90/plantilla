@@ -144,7 +144,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Para centrar verticalmente en toda la altura de la ventana */
+            height: 25vh; /* Para centrar verticalmente en toda la altura de la ventana */
             text-align: center; /* Para centrar el texto dentro de cada bloque */
         }
         .text-block {
