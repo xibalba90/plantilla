@@ -137,6 +137,8 @@
 
 .alerta-amber .ctest {
     margin-top: 90px;
+         text-align: right;
+            flex-grow: 1;
 }
 
 }
