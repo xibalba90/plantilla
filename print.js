@@ -1,5 +1,5 @@
 <script>
-        function openPrintMode() {
+        document.addEventListener('DOMContentLoaded', (event) => {
             window.print();
-        }
+        });
     </script>
