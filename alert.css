@@ -93,11 +93,11 @@
         }
         .alerta-amber .info div p {
             margin: 3px 0;
-            font-size: 0.7em;
+            font-size: 0.6em;
         }
         .alerta-amber .description {
             margin-top: 10px;
-            font-size: 0.7em;
+            font-size: 0.6em;
         }
         .alerta-amber .description p {
             margin: 5px 0;
@@ -113,7 +113,7 @@
         }
         .alerta-amber .informant p {
             margin: 2px 0;
-            font-size: 0.8em;
+            font-size: 0.7em;
         }
         .alerta-amber .informant p strong {
             display: inline-block;
