@@ -9,6 +9,71 @@
    
 </head>
 <body>
+    <script>
+        // Obtener los parámetros de la URL
+        const params = new URLSearchParams(window.location.search);
+
+        // Obtener los valores de los parámetros
+        var nro_boleta = params.has('boleta') ? params.get('boleta') : "---";
+        var nombre_cliente = params.has('cliente') ? params.get('cliente') : "==Cliente==";
+        var telefono = params.has('telefono') ? params.get('telefono') : "==Cliente==";
+        var codigo_pais = params.has('codigo_pais') ? params.get('codigo_pais') : "==Cliente==";
+        var fecha = params.has('fecha') ? params.get('fecha') : "dd/mm/aaaa hh:mm:ss";
+        var fecha_entrega = params.has('fecha_entrega') ? params.get('fecha_entrega') : "hh:mm:ss";
+        var total = params.has('total') ? params.get('total') : "";
+        var subtotal_desc = params.has('subtotal_desc') ? params.get('subtotal_desc') : " ";
+        var total_a_pagar = params.has('total_a_pagar') ? params.get('total_a_pagar') : " ";
+        var descuento = params.has('descuento') ? params.get('descuento') : " ";
+        var a_cuenta = params.has('a_cuenta') ? params.get('a_cuenta') : " ";
+        var desc_por_prenda = params.has('desc_por_prenda') ? params.get('desc_por_prenda') : " ";
+        var pagado_con = params.has('pagado_con') ? params.get('pagado_con') : "--";
+        var a_cuenta_dos = params.has('a_cuenta_dos') ? params.get('a_cuenta_dos') : " ";
+        var pagado_con_dos = params.has('pagado_con_dos') ? params.get('pagado_con_dos') : "--";
+        var porcent_desc = params.has('porcent_desc') ? params.get('porcent_desc') : " ";
+        var porcent_desc_plata = params.has('porcent_desc_plata') ? params.get('porcent_desc_plata') : " ";
+        var total_por_pagar = params.has('total_por_pagar') ? params.get('total_por_pagar') : " ";
+        var estado = params.has('estado') ? params.get('estado') : "--";
+
+        // Recibe los datos de los servicios (separados por comas)
+        var cantidades = params.has('cantidades') ? params.get('cantidades') : "";
+        var descripciones = params.has('servicios') ? params.get('servicios') : "";
+        var detalle = params.has('detalles') ? params.get('detalles') : "";
+        var p_units = params.has('p_unit') ? params.get('p_unit') : "";
+        var subtotal = params.has('subtotal') ? params.get('subtotal') : "";
+
+        // Crea listas a partir de las cadenas separadas por comas
+        cantidades = cantidades.split(",");
+        descripciones = descripciones.split(",");
+        detalle = detalle.split(",");
+        p_units = p_units.split(",");
+
+        // Crea una lista para mostrar en cada fila de la tabla
+        var result = [];
+        cantidades.forEach(function(value, id) {
+            result[id] = {
+                cantidad: cantidades[id],
+                descripcion: descripciones[id],
+                detalle: detalle[id],
+                subtotal: subtotal[id],
+                precio_unit: parseFloat(p_units[id]).toFixed(2),
+            };
+        });
+
+        // Aquí puedes generar el HTML de la tabla o cualquier otro elemento para mostrar en la página
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <div class="alerta-amber">
         <header>
             <img src="https://acortar.link/8D0mMN" alt="Logo Izquierdo">
