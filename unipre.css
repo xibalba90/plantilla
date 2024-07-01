@@ -1,0 +1,62 @@
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            width: 100%;
+            border: 1px solid #000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logos img {
+            width: 100px;
+            display: inline-block;
+            margin: 10px;
+        }
+        .title {
+            text-align: center;
+        }
+        .title h1 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .content {
+            margin: 20px 0;
+        }
+        .info, .fields, .declaration {
+            margin-bottom: 20px;
+        }
+        .info h2 {
+            text-align: center;
+        }
+        .fields p, .declaration p {
+            margin: 10px 0;
+        }
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        .signatures .compareciente, .signatures .testigo {
+            width: 45%;
+            text-align: center;
+        }
+        .signatures .firma {
+            border-top: 1px solid #000;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+    </style>
