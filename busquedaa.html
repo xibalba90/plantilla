@@ -1,109 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Recibo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://xibalba90.github.io/plantilla/alert.css">
+    <title>SECRETARIA DE SEGURIDAD PUBLICA C5i</title>
+    <script>
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name) || '';
+        }
+
+        function populateFields() {
+            document.getElementById('foto-alerta').src = getParameterByName('FOTO_ALERTA');
+            document.getElementById('reporte-img').src = getParameterByName('REPORTE_IMG');
+            document.getElementById('nombre-completo').textContent = getParameterByName('NOMBRE_COMPLETO');
+            document.getElementById('folio').textContent = getParameterByName('FOLIO_PROMAD');
+            document.getElementById('fecha-nacimiento').textContent = getParameterByName('FECHA_DE_NACIMIENTO');
+            document.getElementById('fecha-hechos').textContent = getParameterByName('FECHA_DEL_HECHO');
+            document.getElementById('edad').textContent = getParameterByName('EDAD');
+            document.getElementById('municipio').textContent = getParameterByName('MUNICIPIO');
+            document.getElementById('nacionalidad').textContent = getParameterByName('NACIONALIDAD');
+            document.getElementById('domicilio').textContent = getParameterByName('DOMICILIO');
+            document.getElementById('sexo').textContent = getParameterByName('SEXO');
+            document.getElementById('color-ojos').textContent = getParameterByName('COLOR_OJOS');
+            document.getElementById('color-cabello').textContent = getParameterByName('COLOR_CABELLO');
+            document.getElementById('complexion').textContent = getParameterByName('COMPLEXION');
+            document.getElementById('estatura').textContent = getParameterByName('ESTATURA');
+            document.getElementById('color-piel').textContent = getParameterByName('COLOR_DE_PIEL');
+            document.getElementById('vestimenta').textContent = getParameterByName('VESTIMENTA');
+            document.getElementById('senas-particulares').textContent = getParameterByName('SENAS_PARTICULARES');
+            document.getElementById('padecimiento').textContent = getParameterByName('PADECIMIENTO');
+            document.getElementById('observaciones').textContent = getParameterByName('OBSERVACIONES');
+            document.getElementById('informante-nombre').textContent = getParameterByName('NOMBRE_DEL_INFORMANTE');
+            document.getElementById('informante-domicilio').textContent = getParameterByName('DOMICILIO_INFORMANTE');
+            document.getElementById('informante-telefono').textContent = getParameterByName('TELEFONO_INFORMANTE');
+            document.getElementById('parentesco').textContent = getParameterByName('PARENTESCO');
+            document.getElementById('recibio').textContent = getParameterByName('RECIBIO');
+            document.getElementById('reporto').textContent = getParameterByName('REPORTO');
+            document.getElementById('unidad').textContent = getParameterByName('UNIDAD');
+            document.getElementById('hora').textContent = getParameterByName('HORA');
+            document.getElementById('asignado').textContent = getParameterByName('ASIGNADO');
+            document.getElementById('fecha-hora').textContent = getParameterByName('FECHA_Y_HORA');
+        }
+
+        function autoPrint() {
+            window.print();
+        }
+
+        window.onload = function() {
+            populateFields();
+            autoPrint();
+        }
+    </script>
 </head>
 <body>
-    <script>
-         // Obtener los parámetros de la URL
-        const params = new URLSearchParams(window.location.search);
-
-        // Obtener los valores de los parámetros
-        var DATO = params.has('DATO') ? params.get('DATO') : "---";
-        var nombrE = params.has('COMBRE COMPLETE') ? params.get('COMBRE COMPLETE') : "==Cliente==";
-        var FOLIO = params.has('FOLIO PROMAD') ? params.get('FOLIO PROMAD') : "==Cliente==";
-        var FILIO  = params.has('FOLIO PROMAD (PERSONA  LOCALIZADA)') ? params.get('FOLIO PROMAD (PERSONA  LOCALIZADA)') : "==Cliente==";
-        var fecha = params.has('FECHA DEL HECHO') ? params.get('FECHA DEL HECHO') : "dd/mm/aaaa hh:mm:ss";
-        var fecha_entrega = params.has('FECHA DEL HECHO') ? params.get('FECHA DEL HECHO) : "hh:mm:ss";
-
-
-        var cantidades = params.has('cantidades') ? params.get('cantidades') : "";
-        var descripciones = params.has('servicios') ? params.get('servicios') : "";
-        var detalle = params.has('detalles') ? params.get('detalles') : "";
-        var p_units = params.has('p_unit') ? params.get('p_unit') : "";
-        var subtotal = params.has('subtotal') ? params.get('subtotal') : "";
-
-        // Crea listas a partir de las cadenas separadas por comas
-        cantidades = cantidades.split(",");
-        descripciones = descripciones.split(",");
-        detalle = detalle.split(",");
-        p_units = p_units.split(",");
-
-        // Crea una lista para mostrar en cada fila de la tabla
-        var result = [];
-        cantidades.forEach(function(value, id) {
-            result[id] = {
-                cantidad: cantidades[id],
-                descripcion: descripciones[id],
-                detalle: detalle[id],
-                subtotal: subtotal[id],
-                precio_unit: parseFloat(p_units[id]).toFixed(2),
-            };
-        });
-
-        // Aquí puedes generar el HTML de la tabla o cualquier otro elemento para mostrar en la página
-    </script>
-<script>
-    
-    // Función para imprimir el ticket
-function printTicket() {
-  window.print();
-}
-
-// Asignar la función al evento click del botón de impresión
-document.getElementById('impresoraButton').addEventListener('click', printTicket);
-     
-     
-        
-        
-    </script>
-
-
-    <div class="ticket">
-            <b>NOMBRE:<br>
-            <h1 class="nombrE" id="nombrE" ></h1>
-         </div>
-        <div class="fecharecep">
-            <p class="FOLIO">
-                
-                <b>FECHA RECEPCION:<br>
-                <b id="FOLIO"></b>
-            <br>
-            <b>CLIENTE:<br>
-            <b id="nombre_client"></b>
-          
+    <div class="alerta-amber">
+        <header>
+            <img src="https://acortar.link/8D0mMN" alt="Logo Izquierdo">
+            <div class="center-logo"></div>
+            <img src="https://acortar.link/vZIPdh" alt="Logo Derecho">
+            <h1>SECRETARIA DE SEGURIDAD PUBLICA</h1>
+            <h2>C5i CENTRO DE CONTROL, COMANDO, COMUNICACIONES, CÓMPUTO, COORDINACIÓN E INTELIGENCIA</h2>
+            <h3>FORMATO DE PERSONAS DESAPARECIDAS</h3>
+        </header>
+      
+        <div class="container">
+            <div class="text-block">
+                <img id="foto-alerta" src="" alt="Foto Alerta">
+            </div>
+            <div class="text-block">
+                <img id="reporte-img" src="" alt="Reporte Imagen">
+            </div>
         </div>
-
-        <div class="label">
-            <p class="fecha_entrega">
-                <b> FECHA ENTREGA: <br>
-                    <span id="fecha_entrega"></span>
-                </b>
-            </p>
+       
+        <div class="info">
+            <div>
+                <p><strong>NOMBRE COMPLETO:</strong> <span id="nombre-completo"></span></p>
+                <p><strong>FOLIO:</strong> <span id="folio"></span></p>
+                <p><strong>FECHA DE NACIMIENTO:</strong> <span id="fecha-nacimiento"></span></p>
+                <p><strong>FECHA DE LOS HECHOS:</strong> <span id="fecha-hechos"></span></p>
+                <p><strong>EDAD:</strong> <span id="edad"></span></p>
+                <p><strong>MUNICIPIO:</strong> <span id="municipio"></span></p>
+                <p><strong>NACIONALIDAD:</strong> <span id="nacionalidad"></span></p>
+                <p><strong>DOMICILIO:</strong> <span id="domicilio"></span></p>
+            </div>
+            <div>
+                <p><strong>SEXO:</strong> <span id="sexo"></span></p>
+                <p><strong>COLOR DE OJOS:</strong> <span id="color-ojos"></span></p>
+                <p><strong>COLOR DE CABELLO:</strong> <span id="color-cabello"></span></p>
+                <p><strong>COMPLEXION:</strong> <span id="complexion"></span></p>
+                <p><strong>ESTATURA:</strong> <span id="estatura"></span></p>
+                <p><strong>COLOR DE PIEL:</strong> <span id="color-piel"></span></p>
+            </div>
         </div>
-
-
-
-
-
-
-
-             <script>
-   function pprintTicket() {
-      // Simula hacer clic en el botón de impresión
-     document.getElementById("printButton").click();
-    }
-
-    // Función que se ejecuta después de la impresión
-    window.onafterprint = function() {
-      // Cerrar la ventana después de imprimir
-      window.close();
-    };
-
-
-  </script>
-                
+        <div class="description">
+            <p><strong>VESTIMENTA:</strong> <span id="vestimenta"></span></p>
+            <p><strong>SEÑAS PARTICULARES:</strong> <span id="senas-particulares"></span></p>
+            <p><strong>PADECIMIENTO:</strong> <span id="padecimiento"></span></p>
+            <p><strong>OBSERVACIONES:</strong> <span id="observaciones"></span></p>
+        </div>
+        <div class="informant">
+            <h3>Datos del Informante</h3>
+            <p><strong>NOMBRE COMPLETO:</strong> <span id="informante-nombre"></span></p>
+            <p><strong>DOMICILIO:</strong> <span id="informante-domicilio"></span></p>
+            <p><strong>TELÉFONO:</strong> <span id="informante-telefono"></span></p>
+            <p><strong>PARENTESCO:</strong> <span id="parentesco"></span></p>
+            <p><strong>RECIBIÓ:</strong> <span id="recibio"></span></p>
+            <p><strong>REPORTÓ:</strong> <span id="reporto"></span></p>
+            <p><strong>UNIDAD:</strong> <span id="unidad"></span></p>
+            <p><strong>HORA:</strong> <span id="hora"></span></p>
+            <p><strong>ASIGNADO:</strong> <span id="asignado"></span></p>
+            <p><strong>FECHA Y HORA:</strong> <span id="fecha-hora"></span></p>
+        </div>
+        <div class="contact">
+            <p>ATENTAMENTE</p>
+            <p>JEFE DEL C5i</p>
+            <p>INSP. JEFE MARCOS JOSUÉ MENA CAN</p>
+        </div>
+    </div>
 </body>
-
-   
 </html>
