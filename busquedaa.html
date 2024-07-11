@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -14,8 +14,8 @@
         function populateFields() {
             document.getElementById('foto-alerta').src = getParameterByName('FOTO_ALERTA');
             document.getElementById('reporte-img').src = getParameterByName('REPORTE_IMG');
-            document.getElementById('NOMBRE COMPLETO').textContent = getParameterByName('NOMBRE COMPLETO');
-            document.getElementById('FOLIO PROMAD').textContent = getParameterByName('FOLIO PROMAD');
+            document.getElementById('nombre-completo').textContent = getParameterByName('NOMBRE_COMPLETO');
+            document.getElementById('folio').textContent = getParameterByName('FOLIO_PROMAD');
             document.getElementById('fecha-nacimiento').textContent = getParameterByName('FECHA_DE_NACIMIENTO');
             document.getElementById('fecha-hechos').textContent = getParameterByName('FECHA_DEL_HECHO');
             document.getElementById('edad').textContent = getParameterByName('EDAD');
@@ -76,8 +76,8 @@
        
         <div class="info">
             <div>
-                <p><strong>NOMBRE COMPLETO:</strong> <span id="nombre completo"></span></p>
-                <p><strong>FOLIO:</strong> <span id="FOLIO PROMAD"></span></p>
+                <p><strong>NOMBRE COMPLETO:</strong> <span id="nombre-completo"></span></p>
+                <p><strong>FOLIO:</strong> <span id="folio"></span></p>
                 <p><strong>FECHA DE NACIMIENTO:</strong> <span id="fecha-nacimiento"></span></p>
                 <p><strong>FECHA DE LOS HECHOS:</strong> <span id="fecha-hechos"></span></p>
                 <p><strong>EDAD:</strong> <span id="edad"></span></p>
