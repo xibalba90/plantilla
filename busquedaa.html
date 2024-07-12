@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://xibalba90.github.io/plantilla/alert.css">
-    <title>SECRETARIA DE SEGURIDAD PUBLICA C5i</title>
+    <title>SECRETARÍA DE SEGURIDAD PÚBLICA C5i</title>
     <script>
         function getParameterByName(name) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -12,8 +12,8 @@
         }
 
         function populateFields() {
-            document.getElementById('GRÁFICA').src = getParameterByName('GRÁFICA');
-            document.getElementById('REPORTE_IMG').src = getParameterByName('REPORTE_IMG');
+            document.getElementById('grafica').src = getParameterByName('GRAFICA');
+            document.getElementById('reporte-img').src = getParameterByName('REPORTE_IMG');
             document.getElementById('nombre-completo').textContent = getParameterByName('NOMBRE_COMPLETO');
             document.getElementById('folio').textContent = getParameterByName('FOLIO_PROMAD');
             document.getElementById('fecha-nacimiento').textContent = getParameterByName('FECHA_DE_NACIMIENTO');
@@ -60,17 +60,17 @@
             <img src="https://acortar.link/8D0mMN" alt="Logo Izquierdo">
             <div class="center-logo"></div>
             <img src="https://acortar.link/vZIPdh" alt="Logo Derecho">
-            <h1>SECRETARIA DE SEGURIDAD PUBLICA</h1>
+            <h1>SECRETARÍA DE SEGURIDAD PÚBLICA</h1>
             <h2>C5i CENTRO DE CONTROL, COMANDO, COMUNICACIONES, CÓMPUTO, COORDINACIÓN E INTELIGENCIA</h2>
             <h3>FORMATO DE PERSONAS DESAPARECIDAS</h3>
         </header>
       
         <div class="container">
             <div class="text-block">
-                <img id="GRÁFICA" src="" alt="GRÁFICA">
+                <img id="grafica" src="" alt="Gráfica">
             </div>
             <div class="text-block">
-                <img id="GRÁFICA" src="" alt="GRÁFICA">
+                <img id="reporte-img" src="" alt="Reporte Imagen">
             </div>
         </div>
        
@@ -89,7 +89,7 @@
                 <p><strong>SEXO:</strong> <span id="sexo"></span></p>
                 <p><strong>COLOR DE OJOS:</strong> <span id="color-ojos"></span></p>
                 <p><strong>COLOR DE CABELLO:</strong> <span id="color-cabello"></span></p>
-                <p><strong>COMPLEXION:</strong> <span id="complexion"></span></p>
+                <p><strong>COMPLEXIÓN:</strong> <span id="complexion"></span></p>
                 <p><strong>ESTATURA:</strong> <span id="estatura"></span></p>
                 <p><strong>COLOR DE PIEL:</strong> <span id="color-piel"></span></p>
             </div>
