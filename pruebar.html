@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://xibalba90.github.io/plantilla/alert.css">
+    <title>SECRETARÍA DE SEGURIDAD PÚBLICA C5i</title>
+    <script>
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name) || '';
+        }
+
+        function populateFields() {
+            document.getElementById('grafica').src = decodeURIComponent(getParameterByName('GRAFICA'));
+            document.getElementById('reporte-img').src = decodeURIComponent(getParameterByName('REPORTE_IMG'));
+            document.getElementById('nombre-completo').textContent = decodeURIComponent(getParameterByName('NOMBRE_COMPLETO'));
+            document.getElementById('folio').textContent = decodeURIComponent(getParameterByName('FOLIO_PROMAD'));
+            document.getElementById('fecha-nacimiento').textContent = decodeURIComponent(getParameterByName('FECHA_DE_NACIMIENTO'));
+            document.getElementById('fecha-hechos').textContent = decodeURIComponent(getParameterByName('FECHA_DEL_HECHO'));
+            document.getElementById('edad').textContent = decodeURIComponent(getParameterByName('EDAD'));
+            document.getElementById('municipio').textContent = decodeURIComponent(getParameterByName('MUNICIPIO'));
+            document.getElementById('nacionalidad').textContent = decodeURIComponent(getParameterByName('NACIONALIDAD'));
+            document.getElementById('domicilio').textContent = decodeURIComponent(getParameterByName('DOMICILIO'));
+            document.getElementById('sexo').textContent = decodeURIComponent(getParameterByName('SEXO'));
+            document.getElementById('color-ojos').textContent = decodeURIComponent(getParameterByName('COLOR_OJOS'));
+            document.getElementById('complexion').textContent = decodeURIComponent(getParameterByName('COMPLEXION'));
+            document.getElementById('estatura').textContent = decodeURIComponent(getParameterByName('ESTATURA'));
+            document.getElementById('color-piel').textContent = decodeURIComponent(getParameterByName('COLOR_DE_PIEL'));
+            document.getElementById('vestimenta').textContent = decodeURIComponent(getParameterByName('VESTIMENTA'));
+            document.getElementById('senas-particulares').textContent = decodeURIComponent(getParameterByName('SENAS_PARTICULARES'));
+            document.getElementById('padecimiento').textContent = decodeURIComponent(getParameterByName('PADECIMIENTO'));
+            document.getElementById('observaciones').textContent = decodeURIComponent(getParameterByName('OBSERVACIONES'));
+            document.getElementById('informante-nombre').textContent = decodeURIComponent(getParameterByName('NOMBRE_DEL_INFORMANTE'));
+            document.getElementById('informante-domicilio').textContent = decodeURIComponent(getParameterByName('DOMICILIO_INFORMANTE'));
+            document.getElementById('informante-telefono').textContent = decodeURIComponent(getParameterByName('TELEFONO_INFORMANTE'));
+            document.getElementById('parentesco').textContent = decodeURIComponent(getParameterByName('PARENTESCO'));
+            document.getElementById('recibio').textContent = decodeURIComponent(getParameterByName('RECIBIO'));
+            document.getElementById('reporto').textContent = decodeURIComponent(getParameterByName('REPORTO'));
+            document.getElementById('unidad').textContent = decodeURIComponent(getParameterByName('UNIDAD'));
+            document.getElementById('hora').textContent = decodeURIComponent(getParameterByName('HORA'));
+            document.getElementById('asignado').textContent = decodeURIComponent(getParameterByName('ASIGNADO'));
+            document.getElementById('fecha-hora').textContent = decodeURIComponent(getParameterByName('FECHA_Y_HORA'));
+        }
+
+        function autoPrint() {
+            window.print();
+        }
+
+        window.onload = function() {
+            populateFields();
+            autoPrint();
+        }
+    </script>
+</head>
+<body>
+    <div class="alerta-amber">
+        <header>
+            <img src="https://acortar.link/8D0mMN" alt="Logo Izquierdo">
+            <div class="center-logo"></div>
+            <img src="https://acortar.link/vZIPdh" alt="Logo Derecho">
+            <h1>SECRETARÍA DE SEGURIDAD PÚBLICA</h1>
+            <h2>C5i CENTRO DE CONTROL, COMANDO, COMUNICACIONES, CÓMPUTO, COORDINACIÓN E INTELIGENCIA</h2>
+            <h3>FORMATO DE PERSONAS DESAPARECIDAS</h3>
+        </header>
+      
+        <div class="container">
+            <div class="text-block">
+                <img id="grafica" src="" alt="Gráfica">
+            </div>
+            <div class="text-block">
+                <img id="reporte-img" src="" alt="Reporte Imagen">
+            </div>
+        </div>
+       
+        <div class="info">
+            <div>
+                <p><strong>NOMBRE COMPLETO:</strong> <span id="nombre-completo"></span></p>
+                <p><strong>FOLIO:</strong> <span id="folio"></span></p>
+                <p><strong>FECHA DE NACIMIENTO:</strong> <span id="fecha-nacimiento"></span></p>
+                <p><strong>FECHA DE LOS HECHOS:</strong> <span id="fecha-hechos"></span></p>
+                <p><strong>EDAD:</strong> <span id="edad"></span></p>
+                <p><strong>MUNICIPIO:</strong> <span id="municipio"></span></p>
+                <p><strong>NACIONALIDAD:</strong> <span id="nacionalidad"></span></p>
+                <p><strong>DOMICILIO:</strong> <span id="domicilio"></span></p>
+            </div>
+            <div>
+                <p><strong>SEXO:</strong> <span id="sexo"></span></p>
+                <p><strong>COLOR DE OJOS:</strong> <span id="color-ojos"></span></p>
+                <p><strong>COMPLEXIÓN:</strong> <span id="complexion"></span></p>
+                <p><strong>ESTATURA:</strong> <span id="estatura"></span></p>
+                <p><strong>COLOR DE PIEL:</strong> <span id="color-piel"></span></p>
+            </div>
+        </div>
+        <div class="description">
+            <p><strong>VESTIMENTA:</strong> <span id="vestimenta"></span></p>
+            <p><strong>SEÑAS PARTICULARES:</strong> <span id="senas-particulares"></span></p>
+            <p><strong>PADECIMIENTO:</strong> <span id="padecimiento"></span></p>
+            <p><strong>OBSERVACIONES:</strong> <span id="observaciones"></span></p>
+        </div>
+        <div class="informant">
+            <h3>Datos del Informante</h3>
+            <p><strong>NOMBRE COMPLETO:</strong> <span id="informante-nombre"></span></p>
+            <p><strong>DOMICILIO:</strong> <span id="informante-domicilio"></span></p>
+            <p><strong>TELÉFONO:</strong> <span id="informante-telefono"></span></p>
+            <p><strong>PARENTESCO:</strong> <span id="parentesco"></span></p>
+            <p><strong>RECIBIÓ:</strong> <span id="recibio"></span></p>
+            <p><strong>REPORTÓ:</strong> <span id="reporto"></span></p>
+            <p><strong>UNIDAD:</strong> <span id="unidad"></span></p>
+            <p><strong>HORA:</strong> <span id="hora"></span></p>
+            <p><strong>ASIGNADO:</strong> <span id="asignado"></span></p>
+            <p><strong>FECHA Y HORA:</strong> <span id="fecha-hora"></span></p>
+        </div>
+        <div class="contact">
+            <p>ATENTAMENTE</p>
+            <p>JEFE DEL C5i</p>
+            <p>INSP.JEFE MARCOS JOSUÉ MENA CAN</p>
+        </div>
+    </div>
+</body>
+</html>
