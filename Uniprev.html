@@ -3,8 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://xibalba90.github.io/plantilla/unipre.css">
+  
     <title>Acta de Entrega</title>
+<style>
+        @page {
+            size: letter;
+            margin: 0.5mm;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid fuchsia; /* Borde color fucsia */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        header .logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        header .logos img {
+            height: 80px;
+        }
+
+        header .title h1 {
+            font-size: 16pt;
+            margin: 0;
+        }
+
+        section.content {
+            font-size: 10pt;
+            line-height: 1.6;
+        }
+
+        .info {
+            margin-bottom: 20px;
+        }
+
+        .info h2 {
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        .fields, .declaration {
+            margin-bottom: 20px;
+        }
+
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .signatures .firma {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .firma-line {
+            border-top: 1px solid black;
+            width: 200px;
+            margin: 10px auto;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 8pt;
+        }
+
+        .huella {
+            display: inline-block;
+            border: 1px solid black;
+            width: 70px;
+            height: 5px;
+            margin: 0px;
+            vertical-align: top;
+        }
+
+        .datos-entregado {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .datos-entregado p {
+            font-size: 8pt;
+        }
+    </style>
+
+
+
+
+
+
+    
     <script>
         function getParameterByName(name) {
             const urlParams = new URLSearchParams(window.location.search);
