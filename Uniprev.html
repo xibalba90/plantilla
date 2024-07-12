@@ -3,16 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="https://xibalba90.github.io/plantilla/unipre.css">
+    <link rel="stylesheet" href="https://xibalba90.github.io/plantilla/alert.css">
     <title>Acta de Entrega</title>
+    <script>
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name) || '';
+        }
 
+        function populateFields() {
+            document.getElementById('localidad').textContent = getParameterByName('LOCALIDAD');
+            document.getElementById('hora').textContent = getParameterByName('HORA');
+            document.getElementById('dia').textContent = getParameterByName('DIA');
+            document.getElementById('fecha').textContent = getParameterByName('FECHA');
+            document.getElementById('compareciente').textContent = getParameterByName('COMPARECIENTE');
+            document.getElementById('edad').textContent = getParameterByName('EDAD');
+            document.getElementById('parentesco').textContent = getParameterByName('PARENTESCO');
+            document.getElementById('nombres-edades').textContent = getParameterByName('NOMBRES_EDADES');
+            document.getElementById('calidad').textContent = getParameterByName('CALIDAD');
+            document.getElementById('lugar').textContent = getParameterByName('LUGAR');
+            document.getElementById('identificacion').textContent = getParameterByName('IDENTIFICACION');
+            document.getElementById('numero').textContent = getParameterByName('NUMERO');
+            document.getElementById('calle').textContent = getParameterByName('CALLE');
+            document.getElementById('numero-calle').textContent = getParameterByName('NUMERO_CALLE');
+            document.getElementById('entre-calles').textContent = getParameterByName('ENTRE_CALLES');
+            document.getElementById('colonia').textContent = getParameterByName('COLONIA');
+            document.getElementById('cp').textContent = getParameterByName('CP');
+            document.getElementById('contacto').textContent = getParameterByName('CONTACTO');
+            document.getElementById('lugar-contacto').textContent = getParameterByName('LUGAR_CONTACTO');
+            document.getElementById('testigo').textContent = getParameterByName('TESTIGO');
+            document.getElementById('edad-testigo').textContent = getParameterByName('EDAD_TESTIGO');
+            document.getElementById('tel-testigo').textContent = getParameterByName('TEL_TESTIGO');
+            document.getElementById('accion').textContent = getParameterByName('ACCION');
+            document.getElementById('dia-accion').textContent = getParameterByName('DIA_ACCION');
+            document.getElementById('fecha-accion').textContent = getParameterByName('FECHA_ACCION');
+            document.getElementById('hora-accion').textContent = getParameterByName('HORA_ACCION');
+            document.getElementById('calle-accion').textContent = getParameterByName('CALLE_ACCION');
+            document.getElementById('num-accion').textContent = getParameterByName('NUM_ACCION');
+            document.getElementById('entre-calles-accion').textContent = getParameterByName('ENTRE_CALLES_ACCION');
+            document.getElementById('col-accion').textContent = getParameterByName('COL_ACCION');
+        }
+
+        function autoPrint() {
+            window.print();
+        }
+
+        window.onload = function() {
+            populateFields();
+            autoPrint();
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="logos">
-                <img src="https://acortar.link/FBRbU4" alt="Logo 1">
-                <img src="https://acortar.link/FBRbU4" alt="Logo 2">
+                <img src="https://acortar.link/FBRbU4" alt="Logo Izquierdo">
+                <img src="https://acortar.link/FBRbU4" alt="Logo Derecho">
             </div>
             <div class="title">
                 <h1>UNIDAD ESPECIALIZADA PARA LA PREVENCIÓN DE LA VIOLENCIA FAMILIAR Y DE GÉNERO</h1>
@@ -23,20 +70,20 @@
                 <p>EUU: SSP/UNIPREV/2022/____/____/____</p>
                 <p>EUV: ____</p>
                 <h2>ACTA DE ENTREGA</h2>
-                <p>En _____, del Estado de Yucatán, siendo aproximadamente las _____ horas, del día ________ con fecha ___ de ________ del presente año, ante el personal adscrito a la <b>Unidad Especializada para la Prevención de la Violencia familiar y de Género (UNIPREV)</b> de esta Secretaría de Seguridad Pública del Estado, y con fundamento Jurídico en los Artículos: 20 apartado “C” de la Constitución Política de los Estados Unidos Mexicanos, el 108, 109 y 132, Fracc. XIII del Código Nacional de Procedimientos Penales. El Artículo 7 de La Ley General de Víctimas. El Artículo 13 Fracc. I, II, III, IV, VI de La Ley General de los Derechos de Niñas, Niños y Adolescentes. Los artículos 3, 4, 8 Fracc. I, IV, V de La Ley General de Acceso de las Mujeres a una Vida Libre de Violencia, y demás relativas.</p>
+                <p>En <span id="localidad"></span>, del Estado de Yucatán, siendo aproximadamente las <span id="hora"></span> horas, del día <span id="dia"></span> con fecha <span id="fecha"></span> del presente año, ante el personal adscrito a la <b>Unidad Especializada para la Prevención de la Violencia Familiar y de Género (UNIPREV)</b> de esta Secretaría de Seguridad Pública del Estado, y con fundamento Jurídico en los Artículos: 20 apartado “C” de la Constitución Política de los Estados Unidos Mexicanos, el 108, 109 y 132, Fracc. XIII del Código Nacional de Procedimientos Penales. El Artículo 7 de La Ley General de Víctimas. El Artículo 13 Fracc. I, II, III, IV, VI de La Ley General de los Derechos de Niñas, Niños y Adolescentes. Los artículos 3, 4, 8 Fracc. I, IV, V de La Ley General de Acceso de las Mujeres a una Vida Libre de Violencia, y demás relativas.</p>
             </div>
             <div class="fields">
-                <p>Estando presente (EL) o (LA) C. ___________________________ de ____ años de edad.</p>
-                <p>Quien manifiesta ser _________ de ____________________ con nombre(s) y edad(es): _______________________________________________________________________________</p>
-                <p>Quien/quienes se encuentra(n) en calidad de _____________________________________________.</p>
-                <p>Y estando constituidos en ___________________________ solicita la entrega de la(s) persona(s), antes mencionada(s), haciéndose cargo de los cuidados necesarios bajo su más estricta responsabilidad.</p>
-                <p>Identificándose con ________ Número/clave _________________.</p>
-                <p>Con domicilio en la calle ______ núm. ______ por ____________________________ de __________________________________________ C.P. ________________ y con el (s): ____________________________ de ______________ de ________________.</p>
-                <p>En presencia de/la C. ___________________________ de ______ años de edad, que funge como testigo de la/el C. mencionado (a), y con número de Tel: ___________________________.</p>
+                <p>Estando presente (EL) o (LA) C. <span id="compareciente"></span> de <span id="edad"></span> años de edad.</p>
+                <p>Quien manifiesta ser <span id="parentesco"></span> de <span id="nombres-edades"></span> con nombre(s) y edad(es): <span id="nombres"></span></p>
+                <p>Quien/quienes se encuentra(n) en calidad de <span id="calidad"></span>.</p>
+                <p>Y estando constituidos en <span id="lugar"></span> solicita la entrega de la(s) persona(s), antes mencionada(s), haciéndose cargo de los cuidados necesarios bajo su más estricta responsabilidad.</p>
+                <p>Identificándose con <span id="identificacion"></span> Número/clave <span id="numero"></span>.</p>
+                <p>Con domicilio en la calle <span id="calle"></span> núm. <span id="numero-calle"></span> por <span id="entre-calles"></span> de <span id="colonia"></span> C.P. <span id="cp"></span> y con el (s): <span id="contacto"></span> de <span id="lugar-contacto"></span>.</p>
+                <p>En presencia de/la C. <span id="testigo"></span> de <span id="edad-testigo"></span> años de edad, que funge como testigo de la/el C. mencionado (a), y con número de Tel: <span id="tel-testigo"></span>.</p>
             </div>
             <div class="declaration">
-                <p>Esta autoridad hace de su conocimiento que la(s) persona(s), fue/fueron ______________________, por personal de esta Secretaría el día __________ con fecha ___ del mes __________ del presente año.</p>
-                <p>Siendo las ____ hrs. en la calle _____ con núm. ______ entre __________ de ____________________________.</p>
+                <p>Esta autoridad hace de su conocimiento que la(s) persona(s), fue/fueron <span id="accion"></span>, por personal de esta Secretaría el día <span id="dia-accion"></span> con fecha <span id="fecha-accion"></span> del presente año.</p>
+                <p>Siendo las <span id="hora-accion"></span> hrs. en la calle <span id="calle-accion"></span> con núm. <span id="num-accion"></span> entre <span id="entre-calles-accion"></span> de <span id="col-accion"></span>.</p>
                 <p>Por lo tanto, esta autoridad en este acto procede hacer entrega de la persona(s) explicando detalladamente todas las obligaciones que se asume. Por lo anterior hago constar que leí en voz alta la presente actuación al compareciente quien escuchó de manera directa, firmando al calce junto con el testigo, para su debida constancia.</p>
             </div>
             <div class="signatures">
@@ -67,14 +114,6 @@
                 </div>
             </div>
         </section>
-        <div class="footer">
-            <p>Km. 45 Anillo Periférico Tablaje Catastral 12468 T +52 (999) 930.32.00</p>
-            <p>Car. Polígono - Caucel Subida - Xoclán “S” www.yucatan.gob.mx</p>
-            <p>C.P. 97217 Mérida, Yucatán, México</p>
-        </div>
-        <div class="datos-entregado">
-            <p>DATOS DEL ENTREGADO</p>
-        </div>
     </div>
 </body>
 </html>
