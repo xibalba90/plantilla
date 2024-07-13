@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://xibalba90.github.io/plantilla/alert.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <title>SECRETARÍA DE SEGURIDAD PÚBLICA C5i</title>
+    <script>
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name) || '';
+        }
+
+        function populateFields() {
+            document.getElementById('grafica').src = getParameterByName('GRAFICA');
+            document.getElementById('reporte-img').src = getParameterByName('REPORTE_IMG');
+            document.getElementById('nombre-completo').textContent = getParameterByName('NOMBRE_COMPLETO');
+            document.getElementById('folio').textContent = getParameterByName('FOLIO_PROMAD');
+            document.getElementById('fecha-nacimiento').textContent = getParameterByName('FECHA_DE_NACIMIENTO');
+            document.getElementById('fecha-hechos').textContent = getParameterByName('FECHA_DEL_HECHO');
+            document.getElementById('edad').textContent = getParameterByName('EDAD');
+            document.getElementById('municipio').textContent = getParameterByName('MUNICIPIO');
+            document.getElementById('nacionalidad').textContent = getParameterByName('NACIONALIDAD');
+            document.getElementById('domicilio').textContent = getParameterByName('DOMICILIO');
+            document.getElementById('sexo').textContent = getParameterByName('SEXO');
+            document.getElementById('color-ojos').textContent = getParameterByName('COLOR_OJOS');
+            document.getElementById('color-cabello').textContent = getParameterByName('COLOR_CABELLO');
+            document.getElementById('complexion').textContent = getParameterByName('COMPLEXION');
+            document.getElementById('estatura').textContent = getParameterByName('ESTATURA');
+            document.getElementById('color-piel').textContent = getParameterByName('COLOR_DE_PIEL');
+            document.getElementById('vestimenta').textContent = getParameterByName('VESTIMENTA');
+            document.getElementById('senas-particulares').textContent = getParameterByName('SENAS_PARTICULARES');
+            document.getElementById('padecimiento').textContent = getParameterByName('PADECIMIENTO');
+            document.getElementById('observaciones').textContent = getParameterByName('OBSERVACIONES');
+            document.getElementById('informante-nombre').textContent = getParameterByName('NOMBRE_DEL_INFORMANTE');
+            document.getElementById('informante-domicilio').textContent = getParameterByName('DOMICILIO_INFORMANTE');
+            document.getElementById('informante-telefono').textContent = getParameterByName('TELEFONO_INFORMANTE');
+            document.getElementById('parentesco').textContent = getParameterByName('PARENTESCO');
+            document.getElementById('recibio').textContent = getParameterByName('RECIBIO');
+            document.getElementById('reporto').textContent = getParameterByName('REPORTO');
+            document.getElementById('unidad').textContent = getParameterByName('UNIDAD');
+            document.getElementById('hora').textContent = getParameterByName('HORA');
+            document.getElementById('asignado').textContent = getParameterByName('ASIGNADO');
+            document.getElementById('fecha-hora').textContent = getParameterByName('FECHA_Y_HORA');
+        }
+
+        function sendWhatsAppMessage() {
+            // URL del archivo donde se encuentra insertado el botón
+            var currentURL = window.location.href;
+            
+            // Mensaje a enviar junto con el enlace
+            var message = 'Hola!! somos de la lavandería, somos una lavandería que cuida el medio ambiente ♻️♻️♻️♻️♻️, por ello adjuntamos su ticket de atención virtual. Click en el link para ver el ticket 👇🏻👇🏻👇🏻 ';
+            
+            // Código de país fijo
+            var codigo_pais = '+52';
+            
+            // Número de teléfono del destinatario
+            var telefono = document.getElementById('9991919025').textContent.trim(); // Reemplazar con el número de teléfono real
+
+            // Seleccionar el contenido a convertir en PDF
+            var element = document.body; // Puedes ajustar el selector según sea necesario
+
+            // Generar el PDF
+            html2pdf().from(element).toBlob().then(function (blob) {
+                var formData = new FormData();
+                formData.append('file', blob, 'documento.pdf');
+                
+                // Subir el archivo a un servidor para obtener el enlace (ejemplo usando un servidor local)
+                fetch('https://example.com/upload', { // Reemplazar con la URL de tu servidor de subida
+                    method: 'POST',
+                    body: formData
+                }).then(response => response.json())
+                  .then(data => {
+                      var fileURL = data.url; // Asumiendo que el servidor responde con la URL del archivo subido
+                      
+                      // Construir el enlace de WhatsApp
+                      var whatsappLink = 'https://api.whatsapp.com/send?phone=' + codigo_pais + telefono + '&text=' + encodeURIComponent(message + fileURL) + '?sharelink=1';
+                      
+                      // Abrir una nueva ventana o pestaña para enviar el mensaje por WhatsApp
+                      window.open(whatsappLink, '_blank');
+                  }).catch(error => console.error('Error al subir el archivo:', error));
+            });
+        }
+
+        window.onload = function() {
+            populateFields();
+            autoPrint();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('whatsappButton').addEventListener('click', sendWhatsAppMessage);
+        });
+
+    </script>
+</head>
+<body>
+    <div class="alerta-amber">
+        <header>
+            <img src="https://acortar.link/8D0mMN" alt="Logo Izquierdo">
+            <div class="center-logo"></div>
+            <img src="https://acortar.link/vZIPdh" alt="Logo Derecho">
+            <h1>SECRETARÍA DE SEGURIDAD PÚBLICA</h1>
+            <h2>C5i CENTRO DE CONTROL, COMANDO, COMUNICACIONES, CÓMPUTO, COORDINACIÓN E INTELIGENCIA</h2>
+            <h3>FORMATO DE PERSONAS DESAPARECIDAS</h3>
+        </header>
+      
+        <div class="container">
+            <div class="text-block">
+                <img id="grafica" src="" alt="Gráfica">
+            </div>
+            <div class="text-block">
+                <img id="reporte-img" src="" alt="Reporte Imagen">
+            </div>
+        </div>
+       
+        <div class="info">
+            <div>
+                <p><strong>NOMBRE COMPLETO:</strong> <span id="nombre-completo"></span></p>
+                <p><strong>FOLIO:</strong> <span id="folio"></span></p>
+                <p><strong>FECHA DE NACIMIENTO:</strong> <span id="fecha-nacimiento"></span></p>
+                <p><strong>FECHA DE LOS HECHOS:</strong> <span id="fecha-hechos"></span></p>
+                <p><strong>EDAD:</strong> <span id="edad"></span></p>
+                <p><strong>MUNICIPIO:</strong> <span id="municipio"></span></p>
+                <p><strong>NACIONALIDAD:</strong> <span id="nacionalidad"></span></p>
+                <p><strong>DOMICILIO:</strong> <span id="domicilio"></span></p>
+            </div>
+            <div>
+                <p><strong>SEXO:</strong> <span id="sexo"></span></p>
+                <p><strong>COLOR DE OJOS:</strong> <span id="color-ojos"></span></p>
+                <p><strong>COLOR DE CABELLO:</strong> <span id="color-cabello"></span></p>
+                <p><strong>COMPLEXIÓN:</strong> <span id="complexion"></span></p>
+                <p><strong>ESTATURA:</strong> <span id="estatura"></span></p>
+                <p><strong>COLOR DE PIEL:</strong> <span id="color-piel"></span></p>
+                <p><strong>VESTIMENTA:</strong> <span id="vestimenta"></span></p>
+                <p><strong>SEÑAS PARTICULARES:</strong> <span id="senas-particulares"></span></p>
+            </div>
+            <div>
+                <p><strong>PADECIMIENTO:</strong> <span id="padecimiento"></span></p>
+                <p><strong>OBSERVACIONES:</strong> <span id="observaciones"></span></p>
+                <p><strong>NOMBRE DEL INFORMANTE:</strong> <span id="informante-nombre"></span></p>
+                <p><strong>DOMICILIO DEL INFORMANTE:</strong> <span id="informante-domicilio"></span></p>
+                <p><strong>TELÉFONO DEL INFORMANTE:</strong> <span id="informante-telefono"></span></p>
+                <p><strong>PARENTESCO:</strong> <span id="parentesco"></span></p>
+            </div>
+        </div>
+        
+        <div class="info">
+            <div>
+                <p><strong>RECIBIÓ:</strong> <span id="recibio"></span></p>
+                <p><strong>REPORTÓ:</strong> <span id="reporto"></span></p>
+                <p><strong>UNIDAD:</strong> <span id="unidad"></span></p>
+                <p><strong>HORA:</strong> <span id="hora"></span></p>
+                <p><strong>ASIGNADO:</strong> <span id="asignado"></span></p>
+                <p><strong>FECHA Y HORA:</strong> <span id="fecha-hora"></span></p>
+            </div>
+        </div>
+        
+        <footer>
+            <button id="whatsappButton" class="whatsapp-button">
+                <i class="fab fa-whatsapp"></i> Compartir en WhatsApp
+            </button>
+        </footer>
+    </div>
+</body>
+</html>
