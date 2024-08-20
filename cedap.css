@@ -1,0 +1,97 @@
+ <style>
+        @page {
+            margin: 20mm; /* Margen de la página */
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Russo One', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            height: 100px;
+            border-bottom: 2px solid #000;
+        }
+
+        .logo img {
+            max-width: 150px;
+            max-height: 75px;
+        }
+
+        .title h1 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .title h2 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .date p {
+            margin: 0;
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .content {
+            padding: 20px;
+            margin-top: 0;
+        }
+
+        /* Ajustes para el cuerpo del documento */
+        .content p,
+        .content h1,
+        .content h2 {
+            margin-bottom: 15px;
+        }
+
+        .content h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 16px;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        @media print {
+            .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 100px;
+                background-color: #fff;
+                z-index: 1000;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+
+            /* Ajuste para la tabla y márgenes adicionales */
+            body {
+                padding-top: 120px;
+            }
+
+            .table-start {
+                margin-top: 20px;
+            }
+        }
+    </style>
