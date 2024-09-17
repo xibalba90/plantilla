@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>SECRETARÍA DE SEGURIDAD PÚBLICA C5i</title>
+   
+    <script>
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name) || '';
+        }
+
+        function populateFields() {
+            document.getElementById('fecha-arresto').textContent = getParameterByName('FECHA_DEL_ARRESTO');
+            document.getElementById('supervisor-turno').textContent = getParameterByName('SUPERVISOR_DE_TURNO');
+            document.getElementById('nombre-completo-elemento').textContent = getParameterByName('NOMBRE_COMPLETO_DEL_ELEMENTO');
+            document.getElementById('numero-cobro').textContent = getParameterByName('NUMERO_DE_COBRO');
+            document.getElementById('componente-area').textContent = getParameterByName('COMPONENTE_O_AREA');
+            document.getElementById('accion-cometida').textContent = getParameterByName('ACCION_COMETIDA');
+            document.getElementById('otros').textContent = getParameterByName('OTROS');
+            document.getElementById('descripcion-sucesos').textContent = getParameterByName('BREVE_DESCRIPCION_DEL_SUCESO');
+            document.getElementById('tipo-amonestacion').textContent = getParameterByName('TIPO_DE_AMONESTACION');
+            document.getElementById('horas-arresto').textContent = getParameterByName('HORAS_DE_ARRESTO');
+            document.getElementById('correctivo-disciplinario-interno').textContent = getParameterByName('CORRECTIVO_DISCIPLINARIO_INTERNO');
+            document.getElementById('correctivo-disciplinario-formal').textContent = getParameterByName('CORRECTIVO_DISCIPLINARIO_FORMAL');
+            document.getElementById('fecha-termino').textContent = getParameterByName('FECHA_DE_TERMINO');
+            document.getElementById('hora-termino').textContent = getParameterByName('HORA_DE_TERMINO');
+        }
+
+        function autoPrint() {
+            window.print();
+        }
+
+        window.onload = function() {
+            populateFields();
+            autoPrint();
+        }
+    </script>
+</head>
+<body>
+    <div class="alerta-amber">
+        <header>
+            <img src="https://acortar.link/8D0mMN" alt="Logo Izquierdo" class="left">
+            <div class="center-logo"></div>
+            <img src="https://acortar.link/vZIPdh" alt="Logo Derecho" class="right">
+            <h1>SECRETARÍA DE SEGURIDAD PÚBLICA</h1>
+            <h2>C5i CENTRO DE CONTROL, COMANDO, COMUNICACIONES, CÓMPUTO, COORDINACIÓN E INTELIGENCIA</h2>
+            <h3>FALTAS AL REGLAMENTO INTERNO</h3>
+        </header>
+      
+        <div class="container">
+            <div class="text-block">
+                <p><strong>FECHA DEL ARRESTO:</strong> <span id="fecha-arresto"></span></p>
+                <p><strong>SUPERVISOR DE TURNO:</strong> <span id="supervisor-turno"></span></p>
+                <p><strong>NOMBRE COMPLETO DEL ELEMENTO:</strong> <span id="nombre-completo-elemento"></span></p>
+                <p><strong>NÚMERO DE COBRO:</strong> <span id="numero-cobro"></span></p>
+                <p><strong>COMPONENTE O ÁREA:</strong> <span id="componente-area"></span></p>
+                <p><strong>ACCIÓN COMETIDA:</strong> <span id="accion-cometida"></span></p>
+                <p><strong>OTROS:</strong> <span id="otros"></span></p>
+                <p><strong>BREVE DESCRIPCIÓN DEL SUCESO:</strong> <span id="descripcion-sucesos"></span></p>
+            </div>
+            <div class="text-block">
+                
+                
+                
+                <p><strong>TIPO DE AMONESTACIÓN:</strong> <span id="tipo-amonestacion"></span></p>
+                <p><strong>HORAS DE ARRESTO:</strong> <span id="horas-arresto"></span></p>
+                <p><strong>CORRECTIVO DISCIPLINARIO INTERNO:</strong> <span id="correctivo-disciplinario-interno"></span></p>
+                <p><strong>CORRECTIVO DISCIPLINARIO FORMAL:</strong> <span id="correctivo-disciplinario-formal"></span></p>
+                <p><strong>FECHA DE TÉRMINO:</strong> <span id="fecha-termino"></span></p>
+                <p><strong>HORA DE TÉRMINO:</strong> <span id="hora-termino"></span></p>
+            </div>
+        </div>
+
+        <div class="signatures">
+            <div>
+                <p><strong>FIRMA DEL ELEMENTO</strong></p>
+                <p>___________________________</p>
+            </div>
+            <div>
+                <p><strong>FIRMA DEL SUPERVISOR DE TURNO</strong></p>
+                <p>___________________________</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
