@@ -27,6 +27,9 @@
             document.getElementById('correctivo-disciplinario-formal').textContent = getParameterByName('CORRECTIVO_DISCIPLINARIO_FORMAL');
             document.getElementById('fecha-termino').textContent = getParameterByName('FECHA_DE_TERMINO');
             document.getElementById('hora-termino').textContent = getParameterByName('HORA_DE_TERMINO');
+            
+            // Nuevo campo para el RESPONSABLE QUE REALIZA LA AMONESTACIÓN
+            document.getElementById('responsable-realiza').textContent = getParameterByName('RESPONSABLE_QUE_REALIZA_LA_AMONESTACION');
         }
 
         function autoPrint() {
@@ -38,6 +41,35 @@
             autoPrint();
         }
     </script>
+    <style>
+        .signatures {
+            position: relative;
+            margin-top: 50px;
+            height: 150px; /* Altura para el espacio de las firmas */
+        }
+        .firma-left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            text-align: center;
+        }
+        .firma-right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            text-align: center;
+        }
+        .firma-center {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+        hr {
+            width: 200px;
+        }
+    </style>
 </head>
 <body>
     <div class="alerta-amber">
@@ -54,8 +86,7 @@
             <div class="text-block">
                 <p><strong>FECHA DEL ARRESTO:</strong> <span id="fecha-arresto"></span></p>
                 <p><strong>SUPERVISOR DE TURNO:</strong> <span id="supervisor-turno"></span></p>
-                <p><strong>RESPONSABLE DE TURNO:</strong> <span id="responsable_que_realiza"></span></p>
-                <p><strong>NOMBRE COMPLETO DEL ELEMENTO:</strong> <span id="nombre-completo-elemento"></span></p>
+                <p><strong>RESPONSABLE QUE REALIZA LA AMONESTACIÓN:</strong> <span id="responsable-realiza"></span></p> <!-- Campo nuevo -->
                 <p><strong>NÚMERO DE COBRO:</strong> <span id="numero-cobro"></span></p>
                 <p><strong>COMPONENTE O ÁREA:</strong> <span id="componente-area"></span></p>
                 <p><strong>ACCIÓN COMETIDA:</strong> <span id="accion-cometida"></span></p>
@@ -73,20 +104,17 @@
         </div>
 
         <div class="signatures">
-            <div>
-                 <hr>
+            <div class="firma-left">
+                <hr>
                 <p><strong>FIRMA DEL ELEMENTO</strong></p>
-                
             </div>
-            <div>
+            <div class="firma-right">
                 <hr>
                 <p><strong>FIRMA DEL SUPERVISOR DE TURNO</strong></p>
-
-                div>
+            </div>
+            <div class="firma-center">
                 <hr>
                 <p><strong>FIRMA DEL RESPONSABLE DE TURNO</strong></p>
-               
-                
             </div>
         </div>
     </div>
