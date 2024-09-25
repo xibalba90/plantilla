@@ -27,9 +27,6 @@
             document.getElementById('correctivo-disciplinario-formal').textContent = getParameterByName('CORRECTIVO_DISCIPLINARIO_FORMAL');
             document.getElementById('fecha-termino').textContent = getParameterByName('FECHA_DE_TERMINO');
             document.getElementById('hora-termino').textContent = getParameterByName('HORA_DE_TERMINO');
-            
-            // Nuevo campo para el RESPONSABLE QUE REALIZA LA AMONESTACIÓN
-            document.getElementById('responsable-realiza').textContent = getParameterByName('RESPONSABLE_QUE_REALIZA_LA_AMONESTACION');
         }
 
         function autoPrint() {
@@ -41,7 +38,6 @@
             autoPrint();
         }
     </script>
-    
 </head>
 <body>
     <div class="alerta-amber">
@@ -58,7 +54,8 @@
             <div class="text-block">
                 <p><strong>FECHA DEL ARRESTO:</strong> <span id="fecha-arresto"></span></p>
                 <p><strong>SUPERVISOR DE TURNO:</strong> <span id="supervisor-turno"></span></p>
-                <p><strong>RESPONSABLE QUE REALIZA LA AMONESTACIÓN:</strong> <span id="responsable-realiza"></span></p> <!-- Campo nuevo -->
+                <p><strong>RESPONSABLE DE TURNO:</strong> <span id="responsable_que_realiza"></span></p>
+               
                 <p><strong>NÚMERO DE COBRO:</strong> <span id="numero-cobro"></span></p>
                 <p><strong>COMPONENTE O ÁREA:</strong> <span id="componente-area"></span></p>
                 <p><strong>ACCIÓN COMETIDA:</strong> <span id="accion-cometida"></span></p>
@@ -76,20 +73,22 @@
         </div>
 
         <div class="signatures">
-            <div class="firma-left">
-                <hr>
+            <div>
+                 <hr>
                 <p><strong>FIRMA DEL ELEMENTO</strong></p>
+                
             </div>
-            <div class="firma-right">
+            <div>
                 <hr>
                 <p><strong>FIRMA DEL SUPERVISOR DE TURNO</strong></p>
-            </div>
-            <div class="firma-center">
+
+                div>
                 <hr>
                 <p><strong>FIRMA DEL RESPONSABLE DE TURNO</strong></p>
+               
+                
             </div>
         </div>
     </div>
 </body>
 </html>
-
