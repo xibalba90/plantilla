@@ -12,34 +12,8 @@
             return urlParams.get(name) || '';
         }
 
-function formatDate(dateString) {
-    // Convertir la fecha de cadena a objeto Date
-    const date = new Date(dateString);
-    
-    // Obtener los componentes de la fecha (día, mes, año)
-    const day = String(date.getDate()).padStart(2, '0');  // Asegura que el día tenga dos dígitos
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // Los meses en JavaScript van de 0 (enero) a 11 (diciembre)
-    const year = date.getFullYear();
-
-    // Retornar la fecha en formato "día/mes/año"
-    return `${day}/${month}/${year}`;
-}
-
-function populateFields() {
-    const arrestDate = getParameterByName('FECHA_DEL_ARRESTO');
-    // Formatear la fecha antes de asignarla al campo
-    document.getElementById('fecha-arresto').textContent = formatDate(arrestDate)
-
-
-
-
-
-
-
-        
-
         function populateFields() {
-         
+            document.getElementById('fecha-arresto').textContent = getParameterByName('FECHA_DEL_ARRESTO');
             document.getElementById('supervisor-turno').textContent = getParameterByName('SUPERVISOR_DE_TURNO');
             document.getElementById('nombre-completo-elemento').textContent = getParameterByName('NOMBRE_COMPLETO_DEL_ELEMENTO');
             document.getElementById('numero-cobro').textContent = getParameterByName('NUMERO_DE_COBRO');
