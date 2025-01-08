@@ -6,30 +6,34 @@
     <link rel="stylesheet" href="https://xibalba90.github.io/plantilla/reglamento.css">
     <title>SECRETARÍA DE SEGURIDAD PÚBLICA C5i</title>
    
-    <script>
+   <script>
     function getParameterByName(name) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(name) || '';
     }
 
-    function formatDate(inputDate) {
+    function formatDateTime(inputDateTime) {
         // Asegurarse de que la entrada no sea nula o vacía
-        if (!inputDate) return '';
-        
-        // Divide el valor por los separadores comunes
-        const parts = inputDate.split(/[\/\-]/);
+        if (!inputDateTime) return '';
 
-        // Asegura el orden correcto
-        if (parts.length === 3) {
-            const [year, month, day] = parts[0].length === 4 ? parts : parts.reverse();
-            return `${day.padStart(2, '0')}/${month.padStart(2, '0')}/${year}`;
+        // Separar fecha y hora
+        const [datePart, timePart] = inputDateTime.split(' ');
+
+        // Validar y transformar la fecha
+        const dateParts = datePart.split(/[\/\-]/); // Divide por / o -
+        if (dateParts.length === 3) {
+            const [month, day, year] = dateParts; // Asumir formato MM/DD/YYYY
+            const formattedDate = `${day.padStart(2, '0')}/${month.padStart(2, '0')}/${year}`;
+
+            // Si hay hora, añadirla al final
+            return timePart ? `${formattedDate} ${timePart}` : formattedDate;
         }
 
-        return inputDate; // Devuelve la fecha sin cambios si no es reconocible
+        return inputDateTime; // Devuelve sin cambios si no es reconocible
     }
 
     function populateFields() {
-        document.getElementById('fecha-arrestoo').textContent = formatDate(getParameterByName('FECHA_DEL_ARRESTOO'));
+        document.getElementById('fecha-arrestoo').textContent = formatDateTime(getParameterByName('FECHA_DEL_ARRESTOO'));
         document.getElementById('supervisor-turno').textContent = getParameterByName('SUPERVISOR_DE_TURNO');
         document.getElementById('nombre-completo-elemento').textContent = getParameterByName('NOMBRE_COMPLETO_DEL_ELEMENTO');
         document.getElementById('numero-cobro').textContent = getParameterByName('NUMERO_DE_COBRO');
@@ -41,8 +45,8 @@
         document.getElementById('horas-arresto').textContent = getParameterByName('HORAS_DE_ARRESTO');
         document.getElementById('correctivo-disciplinario-interno').textContent = getParameterByName('CORRECTIVO_DISCIPLINARIO_INTERNO');
         document.getElementById('correctivo-disciplinario-formal').textContent = getParameterByName('CORRECTIVO_DISCIPLINARIO_FORMAL');
-        document.getElementById('fecha-termino').textContent = formatDate(getParameterByName('FECHA_DE_TERMINO'));
-        document.getElementById('hora-termino').textContent = getParameterByName('HORA_DE_TERMINO');
+        document.getElementById('fecha-termino').textContent = formatDateTime(getParameterByName('FECHA_DE_TERMINO'));
+        document.getElementById('hora-termino').textContent = formatDateTime(getParameterByName('HORA_DE_TERMINO'));
         document.getElementById('responsable-realiza').textContent = getParameterByName('RESPONSABLE_QUE_REALIZA_LA_AMONESTACION');
         document.getElementById('se-le-informo-a').textContent = getParameterByName('SE_LE_INFORMO_A');
     }
