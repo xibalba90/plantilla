@@ -7,41 +7,56 @@
     <title>SECRETARÍA DE SEGURIDAD PÚBLICA C5i</title>
    
     <script>
-        function getParameterByName(name) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name) || '';
-        }
+    function getParameterByName(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name) || '';
+    }
 
-        function populateFields() {
-            document.getElementById('fecha-arrestoo').textContent = getParameterByName('FECHA_DEL_ARRESTOO');
-            document.getElementById('supervisor-turno').textContent = getParameterByName('SUPERVISOR_DE_TURNO');
-            document.getElementById('nombre-completo-elemento').textContent = getParameterByName('NOMBRE_COMPLETO_DEL_ELEMENTO');
-            document.getElementById('numero-cobro').textContent = getParameterByName('NUMERO_DE_COBRO');
-            document.getElementById('componente-area').textContent = getParameterByName('COMPONENTE_O_AREA_AL_QUE_PERTENECE');
-            document.getElementById('accion-cometida').textContent = getParameterByName('ACCION_COMETIDA');
-            document.getElementById('otros').textContent = getParameterByName('OTROS');
-            document.getElementById('descripcion-sucesos').textContent = getParameterByName('BREVE_DESCRIPCION_DEL_SUCESO');
-            document.getElementById('tipo-amonestacion').textContent = getParameterByName('TIPO_DE_AMONESTACION');
-            document.getElementById('horas-arresto').textContent = getParameterByName('HORAS_DE_ARRESTO');
-            document.getElementById('correctivo-disciplinario-interno').textContent = getParameterByName('CORRECTIVO_DISCIPLINARIO_INTERNO');
-            document.getElementById('correctivo-disciplinario-formal').textContent = getParameterByName('CORRECTIVO_DISCIPLINARIO_FORMAL');
-            document.getElementById('fecha-termino').textContent = getParameterByName('FECHA_DE_TERMINO');
-            document.getElementById('hora-termino').textContent = getParameterByName('HORA_DE_TERMINO');
-            document.getElementById('responsable-realiza').textContent = getParameterByName('RESPONSABLE_QUE_REALIZA_LA_AMONESTACION');
-            document.getElementById('se-le-informo-a').textContent = getParameterByName('SE_LE_INFORMO_A');
+    function formatDate(inputDate) {
+        // Asegurarse de que la entrada no sea nula o vacía
+        if (!inputDate) return '';
         
-        
+        // Divide el valor por los separadores comunes
+        const parts = inputDate.split(/[\/\-]/);
+
+        // Asegura el orden correcto
+        if (parts.length === 3) {
+            const [year, month, day] = parts[0].length === 4 ? parts : parts.reverse();
+            return `${day.padStart(2, '0')}/${month.padStart(2, '0')}/${year}`;
         }
 
-        function autoPrint() {
-            window.print();
-        }
+        return inputDate; // Devuelve la fecha sin cambios si no es reconocible
+    }
 
-        window.onload = function() {
-            populateFields();
-            autoPrint();
-        }
-    </script>
+    function populateFields() {
+        document.getElementById('fecha-arrestoo').textContent = formatDate(getParameterByName('FECHA_DEL_ARRESTOO'));
+        document.getElementById('supervisor-turno').textContent = getParameterByName('SUPERVISOR_DE_TURNO');
+        document.getElementById('nombre-completo-elemento').textContent = getParameterByName('NOMBRE_COMPLETO_DEL_ELEMENTO');
+        document.getElementById('numero-cobro').textContent = getParameterByName('NUMERO_DE_COBRO');
+        document.getElementById('componente-area').textContent = getParameterByName('COMPONENTE_O_AREA_AL_QUE_PERTENECE');
+        document.getElementById('accion-cometida').textContent = getParameterByName('ACCION_COMETIDA');
+        document.getElementById('otros').textContent = getParameterByName('OTROS');
+        document.getElementById('descripcion-sucesos').textContent = getParameterByName('BREVE_DESCRIPCION_DEL_SUCESO');
+        document.getElementById('tipo-amonestacion').textContent = getParameterByName('TIPO_DE_AMONESTACION');
+        document.getElementById('horas-arresto').textContent = getParameterByName('HORAS_DE_ARRESTO');
+        document.getElementById('correctivo-disciplinario-interno').textContent = getParameterByName('CORRECTIVO_DISCIPLINARIO_INTERNO');
+        document.getElementById('correctivo-disciplinario-formal').textContent = getParameterByName('CORRECTIVO_DISCIPLINARIO_FORMAL');
+        document.getElementById('fecha-termino').textContent = formatDate(getParameterByName('FECHA_DE_TERMINO'));
+        document.getElementById('hora-termino').textContent = getParameterByName('HORA_DE_TERMINO');
+        document.getElementById('responsable-realiza').textContent = getParameterByName('RESPONSABLE_QUE_REALIZA_LA_AMONESTACION');
+        document.getElementById('se-le-informo-a').textContent = getParameterByName('SE_LE_INFORMO_A');
+    }
+
+    function autoPrint() {
+        window.print();
+    }
+
+    window.onload = function() {
+        populateFields();
+        autoPrint();
+    }
+</script>
+
 </head>
 <body>
     <div class="alerta-amber">
