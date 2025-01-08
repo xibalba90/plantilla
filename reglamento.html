@@ -6,10 +6,24 @@
     <link rel="stylesheet" href="https://xibalba90.github.io/plantilla/reglamento.css">
     <title>SECRETARÍA DE SEGURIDAD PÚBLICA C5i</title>
    
-   <script>
+  <script>
     function getParameterByName(name) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(name) || '';
+    }
+
+    function formatDate(inputDate) {
+        // Asegurarse de que la entrada no sea nula o vacía
+        if (!inputDate) return '';
+
+        // Divide la fecha en partes (asume formato MM/DD/YYYY o YYYY-MM-DD)
+        const dateParts = inputDate.split(/[\/\-]/);
+        if (dateParts.length === 3) {
+            const [month, day, year] = dateParts[0].length === 4 ? dateParts.reverse() : dateParts; // Verifica el formato
+            return `${day.padStart(2, '0')}/${month.padStart(2, '0')}/${year}`;
+        }
+
+        return inputDate; // Devuelve sin cambios si no es reconocible
     }
 
     function formatDateTime(inputDateTime) {
@@ -20,20 +34,15 @@
         const [datePart, timePart] = inputDateTime.split(' ');
 
         // Validar y transformar la fecha
-        const dateParts = datePart.split(/[\/\-]/); // Divide por / o -
-        if (dateParts.length === 3) {
-            const [month, day, year] = dateParts; // Asumir formato MM/DD/YYYY
-            const formattedDate = `${day.padStart(2, '0')}/${month.padStart(2, '0')}/${year}`;
+        const formattedDate = formatDate(datePart);
 
-            // Si hay hora, añadirla al final
-            return timePart ? `${formattedDate} ${timePart}` : formattedDate;
-        }
-
-        return inputDateTime; // Devuelve sin cambios si no es reconocible
+        // Si hay hora, añadirla al final
+        return timePart ? `${formattedDate} ${timePart}` : formattedDate;
     }
 
     function populateFields() {
-        document.getElementById('fecha-arrestoo').textContent = formatDateTime(getParameterByName('FECHA_DEL_ARRESTOO'));
+        // Aquí usamos formatDate para columnas DATE y formatDateTime para DATETIME
+        document.getElementById('fecha-arrestoo').textContent = formatDate(getParameterByName('FECHA_DEL_ARRESTOO'));
         document.getElementById('supervisor-turno').textContent = getParameterByName('SUPERVISOR_DE_TURNO');
         document.getElementById('nombre-completo-elemento').textContent = getParameterByName('NOMBRE_COMPLETO_DEL_ELEMENTO');
         document.getElementById('numero-cobro').textContent = getParameterByName('NUMERO_DE_COBRO');
@@ -60,6 +69,7 @@
         autoPrint();
     }
 </script>
+
 
 </head>
 <body>
