@@ -42,7 +42,7 @@
 
     function populateFields() {
         // Aquí usamos formatDate para columnas DATE y formatDateTime para DATETIME
-        document.getElementById('fecha-arresto').textContent = formatDate(getParameterByName('FECHA_DEL_ARRESTO'));
+        document.getElementById('fecha-arrestoo').textContent = getParameterByName('FECHA_DEL_ARRESTOO'));
         document.getElementById('supervisor-turno').textContent = getParameterByName('SUPERVISOR_DE_TURNO');
         document.getElementById('nombre-completo-elemento').textContent = getParameterByName('NOMBRE_COMPLETO_DEL_ELEMENTO');
         document.getElementById('numero-cobro').textContent = getParameterByName('NUMERO_DE_COBRO');
@@ -85,7 +85,7 @@
       
         <div class="container">
             <div class="text-block">
-                <p><strong>FECHA:</strong> <span id="fecha-arresto"></span></p>
+                <p><strong>FECHA:</strong> <span id="fecha-arrestoo"></span></p>
                 <p><strong>SUPERVISOR DE TURNO/ COMPONENTE:</strong> <span id="supervisor-turno"></span></p>
                 <p><strong>RESPONSABLE QUE REALIZA LA AMONESTACIÓN:</strong> <span id="responsable-realiza"></span></p>
                 <p><strong>NOMBRE COMPLETO DEL ELEMENTO:</strong> <span id="nombre-completo-elemento"></span></p>
