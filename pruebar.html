@@ -8,12 +8,16 @@
     <script>
         function getParameterByName(name) {
             const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name) || '';
+            return decodeURIComponent(urlParams.get(name)) || '';
         }
 
         function populateFields() {
-            document.getElementById('grafica').src = getParameterByName('GRAFICA');
-            document.getElementById('reporte-img').src = getParameterByName('REPORTE_IMG');
+            const graficaUrl = getParameterByName('GRAFICA');
+            if (graficaUrl) {
+                document.getElementById('grafica').src = graficaUrl;
+                document.getElementById('grafica').style.display = 'block';
+            }
+            
             document.getElementById('nombre-completo').textContent = getParameterByName('NOMBRE_COMPLETO');
             document.getElementById('folio').textContent = getParameterByName('FOLIO_PROMAD');
             document.getElementById('fecha-nacimiento').textContent = getParameterByName('FECHA_DE_NACIMIENTO');
@@ -21,7 +25,6 @@
             document.getElementById('edad').textContent = getParameterByName('EDAD');
             document.getElementById('municipio').textContent = getParameterByName('MUNICIPIO');
             document.getElementById('nacionalidad').textContent = getParameterByName('NACIONALIDAD');
-            document.getElementById('domicilio').textContent = getParameterByName('DOMICILIO');
             document.getElementById('sexo').textContent = getParameterByName('SEXO');
             document.getElementById('color-ojos').textContent = getParameterByName('COLOR_OJOS');
             document.getElementById('color-cabello').textContent = getParameterByName('COLOR_CABELLO');
@@ -31,18 +34,16 @@
             document.getElementById('vestimenta').textContent = getParameterByName('VESTIMENTA');
             document.getElementById('senas-particulares').textContent = getParameterByName('SENAS_PARTICULARES');
             document.getElementById('padecimiento').textContent = getParameterByName('PADECIMIENTO');
-            document.getElementById('observaciones').textContent = getParameterByName('RESUMENDE_LOS_HECHOS');
             document.getElementById('informante-nombre').textContent = getParameterByName('NOMBRE_DEL_INFORMANTE');
             document.getElementById('informante-domicilio').textContent = getParameterByName('DOMICILIO_INFORMANTE');
-            document.getElementById('informante-telefono').textContent = getParameterByName('TELEFONO_INFORMANTE');
             document.getElementById('parentesco').textContent = getParameterByName('PARENTESCO');
             document.getElementById('recibio').textContent = getParameterByName('RECIBIO');
             document.getElementById('reporto').textContent = getParameterByName('REPORTO');
             document.getElementById('unidad').textContent = getParameterByName('UNIDAD');
             document.getElementById('hora').textContent = getParameterByName('HORA');
-            document.getElementById('RESUMEN_DE_LOS_HECHOS').textContent = getParameterByName('RESUMENDE_LOS_HECHOS');
             document.getElementById('asignado').textContent = getParameterByName('ASIGNADO');
             document.getElementById('fecha-hora').textContent = getParameterByName('FECHA_Y_HORA');
+            document.getElementById('resumen-hechos').textContent = getParameterByName('RESUMENDE_LOS_HECHOS');
         }
 
         function autoPrint() {
@@ -67,11 +68,8 @@
         </header>
       
         <div class="container">
-            <div class="text-block">
-                <p>&lt;&lt;[FOTO ALERTA]&gt;&gt;</p>
-            </div>
-            <div class="text-block">
-                <img id="reporte-img" src="" alt="Reporte Imagen">
+            <div class="image-container">
+                <img id="grafica" src="" alt="Foto Alerta" style="display: none; max-width: 300px; max-height: 300px;">
             </div>
         </div>
        
@@ -84,7 +82,6 @@
                 <p><strong>EDAD:</strong> <span id="edad"></span></p>
                 <p><strong>MUNICIPIO:</strong> <span id="municipio"></span></p>
                 <p><strong>NACIONALIDAD:</strong> <span id="nacionalidad"></span></p>
-                <p><strong>DOMICILIO:</strong> <span id="domicilio"></span></p>
             </div>
             <div>
                 <p><strong>SEXO:</strong> <span id="sexo"></span></p>
@@ -99,13 +96,12 @@
             <p><strong>VESTIMENTA:</strong> <span id="vestimenta"></span></p>
             <p><strong>SEÑAS PARTICULARES:</strong> <span id="senas-particulares"></span></p>
             <p><strong>PADECIMIENTO:</strong> <span id="padecimiento"></span></p>
-            <p><strong>OBSERVACIONES:</strong> <span id="RESUMENDE-LOS-HECHOS"></span></p>
+            <p><strong>RESUMEN DE LOS HECHOS:</strong> <span id="resumen-hechos"></span></p>
         </div>
         <div class="informant">
             <h3>Datos del Informante</h3>
             <p><strong>NOMBRE COMPLETO:</strong> <span id="informante-nombre"></span></p>
             <p><strong>DOMICILIO:</strong> <span id="informante-domicilio"></span></p>
-            <p><strong>TELÉFONO:</strong> <span id="informante-telefono"></span></p>
             <p><strong>PARENTESCO:</strong> <span id="parentesco"></span></p>
             <p><strong>RECIBIÓ:</strong> <span id="recibio"></span></p>
             <p><strong>REPORTÓ:</strong> <span id="reporto"></span></p>
